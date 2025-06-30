@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajkumar Deshmukh's AI-Powered Exercise Flow Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏋️‍♂️ Rajkumar Deshmukh's Workout Assistant</h1>
+        </header>
+
+        <section id="builder-screen" class="screen active">
+            <div class="card glassmorphism">
+                <h2>Build Your Workout</h2>
+                <div class="input-group">
+                    <textarea id="workout-input" placeholder="Enter each exercise step on a new line (e.g., '10 push-ups', '30s plank', '1 min rest'). You can add a timer with (30s) or (1m 30s)"></textarea>
+                    <button id="add-workout-btn" class="main-btn">Add Workout Steps</button>
+                </div>
+                <div class="saved-workouts">
+                    <h3>Saved Workouts</h3>
+                    <ul id="saved-workouts-list">
+                        </ul>
+                    <button id="clear-all-workouts-btn" class="secondary-btn">Clear All Saved Workouts</button>
+                </div>
+            </div>
+            <div class="card glassmorphism settings-card">
+                <h2>Settings</h2>
+                <div class="theme-selector">
+                    <h3>Choose Theme</h3>
+                    <div class="theme-options">
+                        <label>
+                            <input type="radio" name="theme" value="gradient-dark" checked> Dark Gradient
+                        </label>
+                        <label>
+                            <input type="radio" name="theme" value="gradient-light"> Light Gradient
+                        </label>
+                        <label>
+                            <input type="radio" name="theme" value="gradient-blue"> Blue Gradient
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="start-screen" class="screen">
+            <div class="card glassmorphism">
+                <h2 id="greeting-message">Hello, Rajkumar! Ready to sweat?</h2>
+                <div class="animation-placeholder">
+                    <img src="assets/gym_animation.gif" alt="Workout Animation" class="responsive-img">
+                </div>
+                <button id="start-workout-btn" class="main-btn">Start Workout</button>
+                <button id="back-to-builder-btn" class="secondary-btn">Back to Builder</button>
+            </div>
+        </section>
+
+        <section id="session-screen" class="screen">
+            <div class="card glassmorphism workout-session-card">
+                <h2 id="current-step-title">Get Ready!</h2>
+                <p id="current-step-text" class="step-text"></p>
+                <div class="timer-display">
+                    <span id="countdown-timer"></span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <p id="progress-text"></p>
+                <button id="next-step-btn" class="main-btn">Next Step</button>
+                <button id="stop-workout-btn" class="secondary-btn">Stop Workout</button>
+            </div>
+        </section>
+
+        <section id="end-screen" class="screen">
+            <div class="card glassmorphism">
+                <h2>Workout Complete! 🎉</h2>
+                <p id="final-motivation"></p>
+                <img src="assets/trophy.gif" alt="Trophy" class="responsive-img">
+                <button id="new-workout-btn" class="main-btn">Start New Workout</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
